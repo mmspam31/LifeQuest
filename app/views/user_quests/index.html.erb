@@ -1,0 +1,27 @@
+<h1>My Quests</h1>
+
+<table>
+  <tr>
+    <th>Quest</th>
+    <th>User</th>
+    <th>Complete</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_quests.each do |user_quest| %>
+  <tr>
+    <td><%= user_quest.quest.name %></td>
+    <td><%= user_quest.user.email %></td>
+    <td><%= user_quest.complete %></td>
+    <td><%= link_to 'Show', user_quest %></td>
+    <td><%= link_to 'Edit', edit_user_quest_path(user_quest) %></td>
+    <td><%= link_to 'Destroy', user_quest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User quest', new_user_quest_path %>

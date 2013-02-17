@@ -1,0 +1,25 @@
+%h1 View Quests
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th
+    %th
+    %th
+    %th
+
+  - @quests.each_with_index do |quest, i|
+    %tr
+      %td= quest.name
+      %td= quest.description
+      %td= render 'user_quests/hidden_form', quest: quest, user: current_user, form_id: "new_user_quest_#{i}"
+
+      / link_to "Accept", controller: "user_quests", action: "create", method: :post, remote: true, quest: quest, user: current_user
+      %td= link_to 'Show', quest
+      %td= link_to 'Edit', edit_quest_path(quest)
+      %td= link_to 'Destroy', quest, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Quest', new_quest_path

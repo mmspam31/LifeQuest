@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  quest: 
+  user: 
+  complete: false
+
+two:
+  quest: 
+  user: 
+  complete: false

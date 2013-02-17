@@ -1,0 +1,15 @@
+-user_quest = UserQuest.new()
+-user_quest.user = user
+-user_quest.quest = quest
+-form_id ||= "new_user_quest"
+
+= semantic_form_for(user_quest, html: {id: form_id, style: "display:none;"}) do |f|
+  = f.inputs do
+    = f.input :quest
+    = f.input :user, member_label: :email, member_value: :id
+    = f.input :complete, as: :hidden, value: false
+
+  = f.actions do
+    = f.action :submit
+
+%a{href: '#', onclick: "document.getElementById('#{form_id}').submit();"} Accept

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Quest:</b>
+  <%= @user_quest.quest.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @user_quest.user.email %>
+</p>
+
+<p>
+  <b>Complete:</b>
+  <%= @user_quest.complete %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_quest_path(@user_quest) %> |
+<%= link_to 'Back', user_quests_path %>

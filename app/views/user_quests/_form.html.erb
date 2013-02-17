@@ -1,0 +1,11 @@
+<%= semantic_form_for @user_quest do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :quest %>
+    <%= f.input :user, member_label: :email, member_value: :id %>
+    <%= f.input :complete %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>

@@ -1,0 +1,19 @@
+= semantic_form_for @quest do |f|
+  -if @quest.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@quest.errors.count, "error")} prohibited this quest from being saved:"
+      %ul
+        - @quest.errors.full_messages.each do |msg|
+          %li= msg
+  = f.inputs "Quest" do
+    = f.input :name
+    = f.input :description
+    = f.input :paths
+  = f.inputs "Steps" do
+    #steps
+      = f.semantic_fields_for :steps do |step|
+        = render 'step_fields', :f => step
+      .links
+        = link_to_add_association 'add step', f, :steps
+  = f.actions do
+    = f.action :submit, as: :button

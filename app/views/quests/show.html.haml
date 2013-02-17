@@ -1,0 +1,22 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @quest.name
+%p
+  %b Description:
+  = @quest.description
+
+%p
+  %b Paths:
+  = @quest.path_names_joined_by_commas
+
+%h4 Steps
+
+%ol
+  -@quest.steps.each do |step|
+    %li= step.description
+
+= link_to 'Edit', edit_quest_path(@quest)
+\|
+= link_to 'Back', quests_path
