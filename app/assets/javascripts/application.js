@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require cocoon
 //= require jquery.layout-latest
-//= require jquery-ui-1.10.1.custom.min
-//= require_tree .
+// require_tree .
+// require jquery-ui-1.10.1.custom.min

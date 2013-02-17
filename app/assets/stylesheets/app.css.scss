@@ -1,0 +1,49 @@
+$pumpkin:         #FF3500;
+$milk_chocolate:  #BF4E30;
+$burnt_orange:    #A62300;
+$pastel_orange:   #FF6840;  
+$pinkish:         #FF9073;
+$charcoal:        #505050;
+$silver:          rgb(218, 218, 218);
+.ui-layout-pane-west {
+  background-color: $pastel_orange !important;
+  background-image: url('/assets/bg_linkList.gif') !important;
+  background-repeat: repeat-y;  
+}
+
+.ui-layout-pane-south, 
+.ui-layout-pane-north,
+.ui-layout-pane-center
+{
+  background-color: $charcoal !important;
+}
+
+a:link {color:    black;}      /* unvisited link */
+a:visited {color: black;}  /* visited link */
+a:hover {color:#FF00FF;}  /* mouse over link */
+a:active {color:#0000FF;}  /* selected link */ 
+
+html, body {
+  color: white;
+  background-image: url('/assets/bg_body.gif');
+  background-repeat: repeat-x;
+  background-color: $silver;
+  width:    100%;
+  height:   100%;         
+  padding:  0;
+  margin:   0;
+  overflow: auto; /* when page gets too small for container min-width/height */
+}
+#container {
+
+  min-height: 300px;
+  min-width:  600px;
+  position: absolute;
+  top:    50px; /* margins in pixels */
+  bottom:   50px; /* could also use a percent */
+  left:   50px;
+  right:    50px;
+}
+.pane {
+  display:  none; /* will appear when layout inits */
+}

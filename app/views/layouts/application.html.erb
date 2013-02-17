@@ -6,28 +6,40 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <script type="text/javascript">    
-      $(document).ready(function () {
-        $('body').layout({ applyDefaultStyles: true });
+    $(document).ready(function () {
+      $('#container').layout({ 
+        applyDefaultStyles: true,
+        closable: false,
+        resizable: false,
+        slidable: false,
+        spacing_open: 0,
+        spacing_closed: 0,
+        east: {
+          initHidden: true
+        }
+      });
     });
   </script> 
 </head>
 <body>
-  
-  <div class="ui-layout-center">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <a href="">Link</a>
-
-    <%= yield %>
+  <div id="container">
+    <div class="pane ui-layout-center">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+    <div class="pane ui-layout-north">
+      <h1>LifeQuest</h1>
+    </div>
+    <div class="pane ui-layout-south">
+      Embark on your journey today.
+    </div>
+    <div class="pane ui-layout-east">
+      East
+    </div>
+    <div class="pane ui-layout-west">
+      <%= render_navigation %>
+    </div>
   </div>
-  <div class="ui-layout-north"><h1>LifeQuest</h1></div>
-  <div class="ui-layout-south">Embark on your journey today.</div>
-  <div class="ui-layout-east">East</div>
-  <div class="ui-layout-west">
-    <%= render_navigation %>
-  </div>
-
-
 </body>
 </html>
