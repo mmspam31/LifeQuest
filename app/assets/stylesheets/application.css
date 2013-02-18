@@ -14,5 +14,6 @@
  * require_tree .
  *= require formtastic
  *=require app
+ *=require tables
  */
 

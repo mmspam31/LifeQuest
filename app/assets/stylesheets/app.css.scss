@@ -5,10 +5,22 @@ $pastel_orange:   #FF6840;
 $pinkish:         #FF9073;
 $charcoal:        #505050;
 $silver:          rgb(218, 218, 218);
+$border_radius:   10px;
+
 .ui-layout-pane-west {
   background-color: $pastel_orange !important;
   background-image: url('/assets/bg_linkList.gif') !important;
   background-repeat: repeat-y;  
+}
+
+.ui-layout-pane-north {
+  border-top-left-radius:   $border_radius;
+  border-top-right-radius:  $border_radius;
+}
+
+.ui-layout-pane-south {
+  border-bottom-left-radius:   $border_radius;
+  border-bottom-right-radius:  $border_radius;
 }
 
 .ui-layout-pane-south, 
