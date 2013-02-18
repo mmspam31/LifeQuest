@@ -1,5 +1,9 @@
 %h1 User Paths Profile
 #user_paths_div
-  %ul
-  - @user_paths.each do |up| 
-    %li= up.path + '=' + up.level.to_s
+  %table
+    %th Path
+    %th Level
+    - @user_paths.each do |up| 
+      %tr
+        %td= up.path
+        %td= up.level.to_s
