@@ -15,5 +15,6 @@
  *= require formtastic
  *=require app
  *=require tables
+ *=require user_paths
  */
 
