@@ -8,7 +8,8 @@ LifeQuest::Application.routes.draw do
 
   resources :paths
   resources :quests  
-  match 'user_paths/:id/' => 'user_paths#show', :as => :user_paths
+  
+  get 'user_paths/:id' => 'user_paths#show', :as => :user_paths
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

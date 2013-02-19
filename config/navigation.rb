@@ -52,6 +52,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :quests, 'Quests', quests_path
     primary.item :user_quests, 'Quest Log', user_quests_path
     primary.item :paths, 'Paths', paths_path
+    primary.item :paths_profile, 'Paths Profile', user_paths_path(current_user.id)
     # Add an item which has a sub navigation (same params, but with block)
     # primary.item :user_quests, 'Quest Log', user_quests_path, options do |sub_nav|
     #   # Add an item to the sub navigation (same params again)
