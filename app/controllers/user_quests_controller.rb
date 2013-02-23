@@ -2,7 +2,7 @@ class UserQuestsController < ApplicationController
   # GET /user_quests
   # GET /user_quests.json
   def index
-    @user_quests = UserQuest.all
+    @user_quests = UserQuest.where(user_id: current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
