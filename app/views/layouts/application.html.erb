@@ -34,10 +34,7 @@
 
         <span id="loggedInDiv">
           <% if current_user %>
-            Logout, <br/>
-            <%= link_to "#{current_user.email}", destroy_user_session_path, :method => :delete %>
-          <% else %>
-            <%= link_to 'Login', new_user_session_path %>
+            <%= link_to "Logout, #{current_user.email}", destroy_user_session_path, :method => :delete %>
           <% end %>
         </span>
       </div>
