@@ -1,8 +1,11 @@
 <%= semantic_form_for @user_quest do |f| %>
   <%= f.inputs do %>
-    <%= f.input :quest %>
-    <%= f.input :user, member_label: :email, member_value: :id %>
+    <%= f.input :quest, label: 'Quest Name' %>
+    <%= f.input :user, member_label: :email, member_value: :id, as: :hidden %>
     <%= f.input :complete %>
+  <% end %>
+  <%= f.inputs name: 'Steps' do %>
+    <%= f.input :user_quest_steps, as: :check_boxes, label: '' %>
   <% end %>
 
   <%= f.actions do %>

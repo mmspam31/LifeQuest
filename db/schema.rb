@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130213014505) do
+ActiveRecord::Schema.define(:version => 20130228233318) do
 
   create_table "paths", :force => true do |t|
     t.string   "name"
@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(:version => 20130213014505) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "user_quest_steps", :force => true do |t|
+    t.boolean  "complete"
+    t.integer  "user_quest_id"
+    t.integer  "quest_step_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "user_quest_steps", ["quest_step_id"], :name => "index_user_quest_steps_on_quest_step_id"
+  add_index "user_quest_steps", ["user_quest_id"], :name => "index_user_quest_steps_on_user_quest_id"
 
   create_table "user_quests", :force => true do |t|
     t.integer  "quest_id"
