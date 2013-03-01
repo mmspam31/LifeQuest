@@ -3,9 +3,18 @@
     <%= f.input :quest, label: 'Quest Name' %>
     <%= f.input :user, member_label: :email, member_value: :id, as: :hidden %>
     <%= f.input :complete %>
-  <% end %>
-  <%= f.inputs name: 'Steps' do %>
-    <%= f.input :user_quest_steps, as: :check_boxes, label: '' %>
+    <%= f.semantic_fields_for :user_quest_steps do |uqs| %>
+      <div class="step_wrapper">
+      <%= uqs.semantic_fields_for :quest_step do |qs| %>
+        <%= qs.semantic_fields_for :step do |s| %>
+          <span style='float:left'>
+            <%= s.object.description %>
+          </span>
+        <% end %>
+      <% end %>
+      <span><%= uqs.input :complete, wrapper_html: {style: 'padding:0;margin:0;'} %></span>
+      </div>
+    <% end %>
   <% end %>
 
   <%= f.actions do %>
