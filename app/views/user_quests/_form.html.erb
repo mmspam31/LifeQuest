@@ -1,7 +1,14 @@
 <%= semantic_form_for @user_quest do |f| %>
+  <h4>Quest Name:</h4>
+  <p><%= @user_quest.quest.name %></p>
+  <h4>Quest Description:</h4>
+  <p><%= @user_quest.quest.description %></p>
+  
+     
   <%= f.inputs do %>
-    <%= f.input :quest, label: 'Quest Name' %>
-    <%= f.input :user, member_label: :email, member_value: :id, as: :hidden %>
+    <%= f.semantic_fields_for :user do |u| %>
+      <%= u.input :id, as: :hidden %>
+    <% end %>
     <%= f.input :complete %>
     <%= f.semantic_fields_for :user_quest_steps do |uqs| %>
       <div class="step_wrapper">
