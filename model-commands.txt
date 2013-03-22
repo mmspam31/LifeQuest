@@ -15,3 +15,17 @@ rails g model QuestPath quest:references path:references
 rails g model UserQuest quest:references user:references complete:boolean
 
 rails g model User email:string username:string
+
+rails g scaffold Goal action:string quanity:decimal unit:string frequency:decimal frequency_unit:string start:date end:date goal_log:references
+
+rails g model UserGoal goal:references user:references complete:boolean
+
+rails g model GoalLog goal:references log:references
+
+rails g scaffold Log log_date:date quanity:decimal description:string
+
+rails g model GoalGrade goal:references grade:references 
+
+rails g scaffold Grade percent:decimal name:string
+
+rails g model GoalPath quest:references path:references

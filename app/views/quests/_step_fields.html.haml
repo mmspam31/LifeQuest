@@ -1,6 +1,8 @@
 .nested-fields
   = f.inputs do
-    = f.input :description
-    %li
-      = label_tag ''
-      = link_to_remove_association "remove step", f
+    .remove_row 
+      .remove_button_div
+        = link_to_remove_association f do
+          =image_tag "minus-icon.png", :size => "16x16", :class => 'remove_button'
+      .remove_content
+        = f.input :description, label: false, :wrapper_html => { :class => "removable_input" }

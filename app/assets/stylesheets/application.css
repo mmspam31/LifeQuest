@@ -12,9 +12,10 @@
 
  *= require_self
  * require_tree .
- *= require formtastic
+ *=require formtastic
  *=require app
  *=require tables
  *=require user_paths
+ *=require dynamic_rows
  */
 

@@ -1,0 +1,16 @@
+.remove_row {
+  display: table;
+  width: 100%;
+}
+
+.remove_button {
+  float: right;
+}
+.remove_button_div, .remove_content {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.removable_input {
+  margin: 0px !important;
+}
