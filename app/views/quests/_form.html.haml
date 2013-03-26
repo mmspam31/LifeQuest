@@ -5,7 +5,7 @@
       %ul
         - @quest.errors.full_messages.each do |msg|
           %li= msg
-  = f.inputs "Quest" do
+  = f.inputs do
     = f.input :name
     = f.input :description
     = f.input :paths
@@ -14,6 +14,10 @@
       = f.semantic_fields_for :steps do |step|
         = render 'step_fields', :f => step
       .links
-        = link_to_add_association 'add step', f, :steps
+        = link_to_add_association f, :steps do
+          .add_img_div
+            = image_tag "plus_orange.png", :size => '24x24', :class => 'add_button'
+          .add_text_div
+            Add a Step
   = f.actions do
     = f.action :submit, as: :button

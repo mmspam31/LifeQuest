@@ -17,5 +17,8 @@
  *=require tables
  *=require user_paths
  *=require dynamic_rows
+ * require scaffolds
+ *=require custom-scaffolds
+ *=require custom-formtastic
  */
 

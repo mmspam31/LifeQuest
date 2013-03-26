@@ -5,6 +5,7 @@
 
 .remove_button {
   float: right;
+  padding-right: 5px;
 }
 .remove_button_div, .remove_content {
   vertical-align: middle;
@@ -13,4 +14,28 @@
 
 .removable_input {
   margin: 0px !important;
+}
+
+div.links {
+  
+}
+
+.add_fields {
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+
+
+.add_img_div {
+  display: table-cell;
+  width: 25%;
+  text-align: right;
+  padding: 5px;
+}
+
+.add_text_div {
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
 }

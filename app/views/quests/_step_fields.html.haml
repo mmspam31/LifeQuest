@@ -3,6 +3,6 @@
     .remove_row 
       .remove_button_div
         = link_to_remove_association f do
-          =image_tag "minus-icon.png", :size => "16x16", :class => 'remove_button'
+          = image_tag "minus_orange.png", :size => "24x24", :class => 'remove_button'
       .remove_content
         = f.input :description, label: false, :wrapper_html => { :class => "removable_input" }

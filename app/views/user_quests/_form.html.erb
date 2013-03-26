@@ -1,15 +1,16 @@
 <%= semantic_form_for @user_quest do |f| %>
-  <h4>Quest Name:</h4>
+  <p><b>Quest Name:</b></p>
   <p><%= @user_quest.quest.name %></p>
-  <h4>Quest Description:</h4>
+  <br/>
+  <p><b>Quest Description:</b></p>
   <p><%= @user_quest.quest.description %></p>
+  <br/>
   
      
   <%= f.inputs do %>
     <%= f.semantic_fields_for :user do |u| %>
       <%= u.input :id, as: :hidden %>
     <% end %>
-    <%= f.input :complete %>
     <%= f.semantic_fields_for :user_quest_steps do |uqs| %>
       <div class="step_wrapper">
       <span><%= uqs.input :complete, label: '',wrapper_html: {style: 'padding:0;margin:0;display:inline;'}, input_html: {style: 'padding:0;margin:0;display:inline;'} %></span>
@@ -22,9 +23,10 @@
       <% end %>
       </div>
     <% end %>
+    <%= f.input :complete, input_html: {style: 'padding:0;'} %>
   <% end %>
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+  <div class="actions" style="padding: 0">
+    <%= f.submit %>
+  </div>
 <% end %>
