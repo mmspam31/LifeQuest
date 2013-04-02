@@ -42,3 +42,6 @@ gem "cocoon"
 gem "haml"
 gem 'devise'
 gem "simple-navigation"
+
+# allows you to use haml as template for scaffolding
+gem 'haml-rails', :group => :development 
